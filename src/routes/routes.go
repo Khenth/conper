@@ -9,7 +9,7 @@ import (
 
 func Routes() {
 	route := gin.Default()
-	route.Run(":3001")
+	// route.Run(":3001")
 	route.Use(cors.Default())
 	route.Use(static.Serve("/", static.LocalFile("public", false)))
 	route.POST("/api/login", controllers.Login)
