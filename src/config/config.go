@@ -15,10 +15,10 @@ func ConnectDB() *gorm.DB {
 		panic("Error loading .env file")
 	}
 
-	dbUser := os.Getenv("DB_USER")
-	dbPass := os.Getenv("DB_PASS")
-	dbHost := os.Getenv("DB_HOST")
-	dbName := os.Getenv("DB_NAME")
+	dbUser := os.Getenv("conperdb")
+	dbPass := os.Getenv("C0np3r*-2010")
+	dbHost := os.Getenv("192.168.10.101")
+	dbName := os.Getenv("conpercrmrodeo")
 
 	dsn := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local", dbUser, dbPass, dbHost, dbName)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
