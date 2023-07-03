@@ -2,6 +2,7 @@ package routes
 
 import (
 	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 	"github.com/myperri/copner/src/controllers"
 )
@@ -10,7 +11,7 @@ func Routes() {
 	route := gin.Default()
 	route.Run(":3001")
 	route.Use(cors.Default())
-	// route.Use(static.Serve("/", static.LocalFile("public", false)))
+	route.Use(static.Serve("/", static.LocalFile("public", false)))
 	route.POST("/api/login", controllers.Login)
 	route.PUT("/api/actualizar", controllers.Actualizar)
 	route.PUT("/api/actualizarT", controllers.ActualizarT)
